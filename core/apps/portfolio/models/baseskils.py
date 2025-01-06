@@ -6,6 +6,7 @@ from django_core.models import AbstractBaseModel
 class BaseskilsModel(AbstractBaseModel):
     name = models.CharField(_("name"), max_length=255)
     baseskils_icon = models.CharField(_('baseskils'), max_length=100)
+    color = models.CharField(_('color'), max_length=100)
 
     def __str__(self):
         return self.name
