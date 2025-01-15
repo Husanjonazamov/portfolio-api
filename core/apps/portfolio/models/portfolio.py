@@ -47,6 +47,7 @@ class PortfolioModel(AbstractBaseModel):
     description = models.TextField()
     git_url = models.CharField(max_length=255)
     project_url = models.CharField(max_length=255) 
+    create_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

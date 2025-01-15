@@ -23,7 +23,7 @@ class BasePortfolioSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PortfolioModel
-        fields = ['name', 'category', 'skils', 'image', 'description', 'git_url', 'project_url']
+        fields = ['name', 'category', 'skils', 'image', 'description', 'git_url', 'project_url', 'create_at']
 
 
 class ListPortfolioSerializer(BasePortfolioSerializer):
