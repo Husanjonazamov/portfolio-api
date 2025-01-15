@@ -1,15 +1,20 @@
 from rest_framework import serializers
 
-from ...models import PortfolioModel
+from ...models import PortfolioModel, SkilsModel
+from core.apps.portfolio.serializers.portfolio.Skils import BaseSkilsSerializer
 
+
+class SkilsSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = SkilsModel
+        fields = ['name']
 
 class BasePortfolioSerializer(serializers.ModelSerializer):
+    skils = SkilsSerializers(many=True)  
+
     class Meta:
         model = PortfolioModel
-        exclude = [
-            "created_at",
-            "updated_at",
-        ]
+        fields = ['name', 'category', 'skils', 'image', 'description', 'git_url', 'project_url']
 
 
 class ListPortfolioSerializer(BasePortfolioSerializer):

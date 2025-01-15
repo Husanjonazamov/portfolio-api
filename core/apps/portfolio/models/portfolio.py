@@ -44,7 +44,7 @@ class PortfolioModel(AbstractBaseModel):
     category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE)
     skils = models.ManyToManyField(SkilsModel)
     image = models.ImageField(upload_to='portfolio_image/')
-    decsription = models.TextField()
+    description = models.TextField()
     git_url = models.CharField(max_length=255)
     project_url = models.CharField(max_length=255) 
 
